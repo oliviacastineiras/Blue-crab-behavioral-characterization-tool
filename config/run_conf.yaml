@@ -1,0 +1,33 @@
+input:
+  extension: mp4
+  path: /dataset/samples
+  resolution:
+    height: 1080
+    width: 1920
+model:
+  algorithm: detection
+  batch_size: 128
+  conf_threshold: 0.8
+  device: cpu
+  internal_resolution:
+    height: 256
+    width: 256
+  nms_threshold: 0.5
+  path: models/0.2.0/tracking.onnx
+multiprocess:
+  simultaneous_video_processes: 1
+  threads_per_video: 2
+output:
+  coordinates_columns:
+  - x1
+  - y1
+  - x2
+  - y2
+  denormalize:
+    enabled: true
+  interpolate:
+    enabled: true
+    max_distance: 50
+  path: /results
+  render_videos:
+  - '7'

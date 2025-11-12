@@ -1,0 +1,20 @@
+services:
+  crab-track:
+    build: .
+    image: mmatiasg/crab-track:v0.3.1
+    container_name: crab-track
+    tty: false
+    volumes:
+      - type: bind
+        source: ./videos
+        target: /dataset/samples
+      - type: bind
+        source: ./results
+        target: /results
+      - type: bind
+        source: ./config
+        target: /config
+    environment:
+      YOLO_VERBOSE: false
+    command:
+      ["python", "main.py", "--config_path=/config/run_conf.yaml", "--track"]
