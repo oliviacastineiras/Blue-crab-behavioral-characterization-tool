@@ -24,18 +24,17 @@ TFG-Cangrejo-Analisis/
 ├── analisis.py                 (Motor de análisis científico)
 ├── docker-hub-docker-compose.yaml  (Orquestador del backend)
 │
-├── config/                     (¡Carpeta obligatoria!)
+├── config/                     (Carpeta obligatoria)
 │   └── run_conf.yaml           (Fichero de configuración del tracker)
 │
 ├── datos_csv/
-│   ├── (Aquí van los 17 .csv del experimento Día/Noche)
-│   └── Resultados_Resumen_Metricas.csv
+│   └── (Aquí van los 17 .csv del experimento Día/Noche)
 │
-├── results/                    (¡Carpeta obligatoria!)
+├── results/                    (Carpeta obligatoria)
 │   ├── stats/                  (Debe existir, es donde Docker escribe los CSV)
 │   └── videos/                 (Debe existir, es donde Docker escribe los vídeos)
 │
-├── videos/                     (¡Carpeta obligatoria!)
+├── videos/                     (Carpeta obligatoria)
 │   └── (Debe existir, es donde Docker lee los vídeos a procesar)
 │
 └── README.md                   
@@ -80,3 +79,4 @@ El motor de análisis (`analisis.py`) y la interfaz (`app.py`) requieren las sig
 * reportlab
 
 * PyYAML (para leer/escribir el `run_conf.yaml`)
+
