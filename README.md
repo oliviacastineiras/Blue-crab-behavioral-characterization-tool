@@ -17,6 +17,7 @@ La aplicación es una herramienta de análisis de alto nivel que permite a los i
 ## Estructura de Carpetas e Instalación
 
 Para que la aplicación (`app.py`) funcione correctamente, es **fundamental** replicar la siguiente estructura de carpetas en la raíz del proyecto, ya que el código depende de estas rutas relativas:
+```
 TFG-Cangrejo-Analisis/
 │
 ├── app.py                      (Script principal de la interfaz)
@@ -38,7 +39,7 @@ TFG-Cangrejo-Analisis/
 │   └── (Debe existir, es donde Docker lee los vídeos a procesar)
 │
 └── README.md                   
-
+```
 **Nota:** Las carpetas `config/`, `videos/`, `results/stats/` y `results/videos/` **deben existir** (aunque estén vacías) *antes* de ejecutar `app.py` por primera vez para evitar errores `FileNotFoundError`.
 
 ## Requisitos y Componentes Externos
@@ -77,4 +78,5 @@ El motor de análisis (`analisis.py`) y la interfaz (`app.py`) requieren las sig
 * customtkinter
 * matplotlib
 * reportlab
+
 * PyYAML (para leer/escribir el `run_conf.yaml`)
