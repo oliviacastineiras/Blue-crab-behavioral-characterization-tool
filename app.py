@@ -2804,9 +2804,6 @@ if __name__ == "__main__":
 
 
 
-#mirar lo de la trayectoria,que no haga lineas rectas raras(o preguntar pq las hace mas bien)
-
-# en el caso de que haya mas de dos grupos que me aparezcan bien los graficos en heatmap por grupo(es lo de menos pq en la memoria no se va a ver)
 
 
 
