@@ -95,7 +95,7 @@ def cargar_y_preparar_datos(
                 # No creamos las columnas o las dejamos como NaN si ya existen
                 df['center_x_mm'] = np.nan
                 df['center_y_mm'] = np.nan
-                # return None # Puedes decidir si abortar aquí o continuar sin _mm
+                
 
         elif pixeles_por_mm is not None and pixeles_por_mm > 0:
             print(f"DEBUG ({nombre_csv}): Aplicando calibración manual (escala)...")
@@ -426,7 +426,7 @@ def analizar_zonas_caja(df, dimensiones_caja, fps):
     """
     ancho, alto = dimensiones_caja
     
-    # Definir zonas de interés (personalizable)
+    # Definir zonas de interés 
     zonas = {
         'esquina_superior_izquierda': (0, 0, ancho/3, alto/3),
         'centro_superior': (ancho/3, 0, 2*ancho/3, alto/3),
@@ -661,7 +661,7 @@ def calcular_metricas_avanzadas(df, dimensiones_caja, fps):
         'ratio_actividad_inactividad': 0   # Placeholder
     }
 
-# NUEVA FUNCIÓN PARA EL MAPA DE CALOR CONJUNTO
+
 def generar_mapa_calor_conjunto(lista_de_dataframes, dimensiones_caja, bins_x=50, bins_y=30):
     """
     Genera un único mapa de calor a partir de una lista de DataFrames de varios vídeos.
@@ -978,7 +978,7 @@ def generar_grafico_distancia_centro(df, dimensiones_caja_mm):
     fig = plt.figure(figsize=(6, 4)) # Tamaño estándar para los gráficos pequeños
     ax = fig.add_subplot(1, 1, 1)
     ax.set_title('Distancia al Centro vs. Tiempo')
-    # Comprobaciones robustas de los datos de entrada
+    # Comprobaciones de los datos de entrada
     if df is None or df.empty or 'center_x_mm' not in df.columns or 'center_y_mm' not in df.columns or df['center_x_mm'].isna().all():
         ax.text(0.5, 0.5, 'Datos de trayectoria\ninsuficientes.', ha='center', va='center', transform=ax.transAxes)
         return fig
@@ -1023,6 +1023,7 @@ def generar_grafico_distancia_centro(df, dimensiones_caja_mm):
     # Ajustar límites X si hay columna 'frame'
     if 'frame' in df.columns:
          ax.set_xlim(left=df['frame'].min(), right=df['frame'].max())
+
 
 
     return fig
